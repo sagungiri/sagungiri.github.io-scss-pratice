@@ -1,0 +1,25 @@
+.heading-primary{
+color: $color-heading;
+text-transform: uppercase;
+backface-visibility: hidden;
+
+&--main{
+display: block;
+font-size: 4.8rem;
+font-weight: 400;
+letter-spacing: 1.5rem;
+animation-name: moveInLeft;
+animation-duration: 1s;
+animation-delay: 1s;
+animation-timing-function: linear;
+/* animation-iteration-count: 2; */
+}
+&--sub{
+display: block;
+font-size: 2.8rem;
+font-weight: 500;
+letter-spacing: 1.88rem;
+animation: moveInRight 1s 1s linear;
+margin-bottom: 5%;
+}
+}
