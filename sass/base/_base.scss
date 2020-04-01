@@ -6,13 +6,8 @@ padding: 0;
 box-sizing: inherit; 
 }
 html{
-  font-size: 62.5%;
+  font-size: 62.5%; //defines about 1rem by default in chrome 62.5% = 16px = 1rem
 }
 body{
-font-family: 'Merriweather', sans-serif;
-font-weight: 400;
-/* font-size: 16px; */
-line-height: 1.7;
-padding: 2.5rem;
 box-sizing: border-box;
 }
