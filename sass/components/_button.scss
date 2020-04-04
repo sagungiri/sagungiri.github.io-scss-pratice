@@ -9,6 +9,7 @@ transition: all .5s;
 position: relative;
 font-weight: 600;
 font-size: 1.8rem;
+color: $color-gray-dark;
   }
   &:hover{
 transform: translateY(-5px);

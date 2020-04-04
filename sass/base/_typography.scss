@@ -48,11 +48,13 @@ margin-bottom: 5%;
 }
 }
 .heading-tertiary{
+color: $color-gray-dark;
 font-size: $default-font-size;
 text-transform: uppercase;
 
 }
 .paragraph{
+color: $color-gray-dark;
 font-size: 1.3rem;
 text-align: justify;
 &:not(:last-child){         //select everything accept last child

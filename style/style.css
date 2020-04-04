@@ -84,10 +84,12 @@ body {
     text-shadow: 0.5rem 0.1rem 2rem rgba(0, 0, 0, 0.5); }
 
 .heading-tertiary {
+  color: #332929;
   font-size: 1.6rem;
   text-transform: uppercase; }
 
 .paragraph {
+  color: #332929;
   font-size: 1.3rem;
   text-align: justify; }
   .paragraph:not(:last-child) {
@@ -105,11 +107,6 @@ body {
 .u-margin-bottom-medium {
   margin-bottom: 4rem; }
 
-.section-about {
-  background-color: #f7f7f7;
-  padding: 20rem 0;
-  margin-top: -10vh; }
-
 .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
@@ -119,7 +116,8 @@ body {
   transition: all .5s;
   position: relative;
   font-weight: 600;
-  font-size: 1.8rem; }
+  font-size: 1.8rem;
+  color: #332929; }
 
 .btn:hover {
   transform: translateY(-5px);
@@ -146,7 +144,7 @@ body {
 
 .btn--white {
   background-color: #ffff;
-  color: #474747; }
+  color: #332929; }
   .btn--white::after {
     background-color: #ffff; }
 
@@ -173,6 +171,34 @@ body {
 .btn-text:active {
   box-shadow: 0 1rem 1.25rem rgba(0, 0, 0, 0.3);
   transform: translateY(0); }
+
+.composition {
+  cursor: pointer;
+  position: relative; }
+  .composition__photo {
+    width: 60%;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.6);
+    border-radius: .75rem;
+    position: absolute;
+    transition: all .2s;
+    z-index: 5;
+    outline-offset: 1rem; }
+    .composition__photo--p1 {
+      left: 0;
+      top: -2rem; }
+    .composition__photo--p2 {
+      right: 0;
+      top: 2rem; }
+    .composition__photo--p3 {
+      left: 20%;
+      top: 10rem; }
+    .composition__photo:hover {
+      outline: 0.35rem solid #009fb1;
+      transform: scale(1.07) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.7);
+      z-index: 10; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.9); }
 
 .header {
   height: 90vh;
@@ -209,3 +235,8 @@ body {
   width: calc((100% - 6rem)/2); }
   .col-1-of-2:nth-child(2) {
     margin-right: 0; }
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 20rem 0;
+  margin-top: -10vh; }
