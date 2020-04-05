@@ -1,5 +1,23 @@
 .section-about{
     background-color: $color-gray-light-1;
-    padding: 20rem 0;
+    padding: 15rem 0;
     margin-top: -10vh;
+}
+.section-features{
+    margin-top: -5.75rem;
+    padding: 15rem 0;
+    background-image:linear-gradient(to bottom left, rgba($color-heading, 0.7),
+ rgba($color-primary-dark, 0.6)),
+  url(../../images/alexandro-espinar-H4g8NIs-_7A-unsplash.jpg);
+  background-size: cover;
+  transform: skewY(-5deg);
+
+  & > * {   //select all the children element of class section-features
+      transform: skewY(5deg);
+  }
+}
+.section-tours{
+      background-color: $color-gray-light-1;
+    padding: 20rem 0 50rem 0;
+     margin-top: -8rem;
 }
