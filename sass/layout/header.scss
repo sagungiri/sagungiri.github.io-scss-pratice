@@ -6,6 +6,7 @@ background-image:linear-gradient(to bottom left, rgba($color-primary-light, 0.5)
 background-size: cover;
 position: relative;
 background-position: top;
+-webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
 clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
 
 &__text-box{              //&__text-box = .header__text-box

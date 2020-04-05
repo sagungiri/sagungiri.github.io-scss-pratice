@@ -2,18 +2,19 @@
     perspective: 150rem;
     -moz-perspective: 150rem;
     position: relative;
-     height: 40rem;
+     height: 45rem;
     cursor: pointer;
 
     &__side{
-    height: 40rem;
-    transition: all .8s ease;
+    height: 45rem;
+    transition: all 1s ease;
     position: absolute;
     top: 0;
     left: 0;
     width: 90%;
     backface-visibility: hidden;
-    border-radius: 1.25rem;
+    border-radius: 1.15rem;
+    overflow: hidden ;
     box-shadow: 0 1.75rem 3.5rem rgba($color-black, .6);
 
         &--front{
@@ -22,15 +23,117 @@
         &--back{
             transform: rotateY(180deg);
             &-1{
-                background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+                background-image: linear-gradient(to bottom right, $color-secondary-light, $color-secondary-dark);
+            }
+            &-2{
+                background-image: linear-gradient(to bottom right, $color-primary-light, $color-primary-dark);
+            }
+            &-3{
+                background-image: linear-gradient(to bottom right, $color-heading, $color-tertiary-dark);
             }
         }
     }
 
     &:hover &__side--front{    //when card is hovered card__side will be transformed
-        transform: rotateY(180deg);
+        transform: rotateY(-180deg);
     }
      &:hover &__side--back{    
         transform: rotateY(0);
     }
+    //front side style
+    &__picture{
+         background-size: cover;
+         height: 25rem;
+         border-radius: 1.15rem 1.15rem 0 0;
+         
+         -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        &--1{
+            background-image:linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark),
+             url(../images/kat-nelson-GfQtCsCD8Nk-unsplash.jpg);
+             background-blend-mode: multiply;
+        }
+         &--2{
+            background-image:linear-gradient(to right bottom, $color-primary-light, $color-primary-dark),
+             url(../../images/nijwam-swargiary-ofdJewkVTok-unsplash.jpg);
+             background-blend-mode: saturation;
+        }
+         &--3{
+           background-image:linear-gradient(to right bottom, $color-heading, $color-tertiary-dark),
+             url(../images/laura-chouette-S8PzyvvxjBo-unsplash.jpg);
+             background-blend-mode: hard-light;
+        }
+    }
+    &__heading{
+        font-size: 1.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: $color-white;
+        text-align: center;
+        position: absolute;
+        top: 18rem;
+        right: .75rem;
+        width: 60%;
+    }
+
+      &__heading-span{
+        padding: .5rem;
+        -webkit-box-decoration-break:clone;
+        box-decoration-break:clone;
+        &--1{
+          background-image:linear-gradient(to right bottom, rgba($color-secondary-light, .8), rgba( $color-secondary-dark, .8))  
+         }
+            &--2{
+          background-image:linear-gradient(to right bottom, rgba($color-primary-light, .8), rgba( $color-primary-dark, .8))  
+         }
+            &--3{
+          background-image:linear-gradient(to right bottom, rgba($color-heading, .8), rgba(  $color-tertiary-dark, .8))  
+         }
+        }
+        &__details{
+            padding: 2rem;
+            ul{
+                list-style: none;
+                width: 80%;
+                margin: 0 auto;
+               
+                li{
+                    color: $color-gray-dark;
+                text-align: center;
+                font-size: 1.3rem;
+                padding: .75rem;
+
+                &:not(:last-child){
+                    border-bottom: .75px solid rgba($color-gray-dark, .75);
+                }
+                }
+            }
+        }
+        //Back Card
+        &__cta{
+            color: $color-gray-dark;
+            text-align: center;
+            position: absolute;
+            top: 20%;
+            left: 32%;
+            transform: translate(-25%, -15%);
+        }
+        &__price-value{
+            font-size: 2.8rem;
+            font-weight: 500;
+            padding: 5%;
+            letter-spacing: 3px;
+            &-1{
+             margin-bottom: 4rem;
+            color: $color-tertiary-dark;
+            }
+              &-2{
+             margin-bottom: 8rem;
+            color:$color-gray-dark ;
+            }
+              &-3{
+             margin-bottom: 8rem;
+            color: $color-secondary-light;
+            }
+        }
 }

@@ -1,0 +1,56 @@
+.story{
+    width: 70%;
+    margin: 0 auto;
+    box-shadow: 0 4rem 7rem rgba($color-black, .5);
+    background-color: $color-white;
+    border-radius: .5rem;
+    padding: 7.75rem;
+    padding-left: 9rem;
+    font-size: 1.4rem;
+    color: $color-gray-dark;
+    transform: skewX(-10deg);
+    cursor: pointer;
+
+    &__shape{
+    width: 18rem;
+    height: 18rem;
+    float: left;
+    position: relative;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path:circle(50% at 50% 50%);
+    clip-path:circle(50% at 50% 50%);
+    transform: translatex(-3rem) translateY(-.9rem) skewX(12deg);
+    }
+
+    &__img{
+        height: 100%;
+        transform: translateX(-4rem);
+        transition: all .4s;
+    }
+&__text{
+    transform: skewX(12deg);
+}
+&__caption{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform: translate(-37%, 60%);
+    color:$color-primary;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    opacity: 0;
+    transition: all .5s;
+    backface-visibility: hidden;
+}
+&:hover &__caption{ //effect for story__caption when story is hovered
+    opacity: 1;
+    transform: translate(-37%, -5%);
+   
+}
+&:hover &__img{  //effect for story__img when story is hovered
+ transform: translateX(-4rem) scale(1.15);
+ filter: blur(.4rem) brightness(70%);
+}
+}
