@@ -328,7 +328,7 @@ body {
   width: 70%;
   margin: 0 auto;
   box-shadow: 0 4rem 7rem rgba(0, 0, 0, 0.5);
-  background-color: #ffff;
+  background-color: rgba(255, 255, 255, 0.6);
   border-radius: .5rem;
   padding: 7.75rem;
   padding-left: 9rem;
@@ -370,6 +370,20 @@ body {
   .story:hover .story__img {
     transform: translateX(-4rem) scale(1.15);
     filter: blur(0.4rem) brightness(70%); }
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: .3;
+  overflow: hidden; }
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
 
 .header {
   height: 90vh;
@@ -438,6 +452,6 @@ body {
   margin-top: -8rem; }
 
 .section-stories {
+  position: relative;
   padding: 10rem 0;
-  background-color: #f8f8f8;
   text-align: center; }
