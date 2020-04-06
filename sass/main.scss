@@ -16,8 +16,10 @@
 @import'components/bg-video';
 @import'components/form';
 
-@import 'layout/header.scss';
-@import 'layout/grid.scss';
+@import 'layout/header';
+@import 'layout/grid';
+@import 'layout/footer';
+@import'layout/_navigation';
 
 @import 'pages/home';
 
