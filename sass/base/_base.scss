@@ -6,8 +6,25 @@ padding: 0;
 box-sizing: inherit; 
 }
 html{
-  font-size: 62.5%; //defines about 1rem by default in chrome 62.5% = 16px = 1rem
+  font-size: 62.5%; //defines about 1rem by default in chrome 62.5% = 10px = 1rem
+
+   @include respond(tab-land){
+    font-size: 56.25%; //9px = 1rem
+  }
+
+    @include respond(tab-port){
+    font-size: 50%; //8px = 1rem
+  }
+  
+   @include respond(big-desktop){
+    font-size: 75%;   //12px = 1rem
+  }
 }
 body{
 box-sizing: border-box;
+padding: 2.5rem;
+
+   @include respond(tab-port){
+  padding: 0;
+  }
 }

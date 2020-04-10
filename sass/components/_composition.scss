@@ -9,18 +9,41 @@
         transition: all .2s;
         z-index: 5;
         outline-offset: 1rem;
+
+         @include respond(tab-port){
+        float: left;
+        position: relative;
+        width: 33.33%;
+    }
         
         &--p1{
-            left: 0;
+            left: 1rem;
             top: -2rem;
+        @include respond(tab-port){
+            left: 2rem;
+            top: 1rem;
+            transform: scale(1.1);
+            z-index: 4;
+        }
         }
        &--p2{
            right: 0;
             top: 2rem;
+            @include respond(tab-port){
+            top: -1rem;
+            transform: scale(1.2);
+            z-index: 5;
+        }
         }
        &--p3{
             left: 20%;
             top: 10rem;
+            @include respond(tab-port){
+            top: 1rem;
+           left: -2rem;
+           transform: scale(1.1);
+           z-index: 4;
+        }
         }
     &:hover{
         outline: .35rem solid $color-primary;

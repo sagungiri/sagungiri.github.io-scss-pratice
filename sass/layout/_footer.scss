@@ -1,13 +1,21 @@
 .footer{
     background-color: $color-gray-light-3;
     padding: 4rem 0;
-    
     font-weight: 600;
     color: $color-gray-dark;
+
+   @include respond(tab-port){
+    padding: 3rem 0s;
+   }
     &__navigation{
         border-top: .15rem solid $color-gray-dark;
         padding-top: 4rem;
         display: inline-block;
+
+    @include respond(tab-port){
+   width: 100%;
+   text-align: center ;
+   }
     }
     &__list{
         list-style: none;
@@ -43,5 +51,10 @@
         padding-top: 4rem;
         width: 90%;
         float: right;
+
+      @include respond(tab-port){
+        width: 100%;
+        float: none; ;
+   }
     }
 }

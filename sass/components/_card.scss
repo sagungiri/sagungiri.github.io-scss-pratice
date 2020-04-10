@@ -136,4 +136,72 @@
             color: $color-secondary-light;
             }
         }
+
+
+@include respond(tab-port){
+     height: auto;
+    border-radius: 3rem;
+    background-color: $color-white;
+    box-shadow: 0 1rem 4rem rgba($color-black, .4);
+
+    &__side{
+    height: auto;
+    position: relative;
+    width: 100%;
+    overflow: hidden ;
+    border-radius: 0;
+    box-shadow: none;
+        &--back{
+            transform: rotateY(0);
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        }
+    }
+
+    &__details{
+        padding: 1rem 3rem;
+    }
+
+    &:hover &__side--front{    //when card is hovered card__side will be transformed
+        transform: rotateY(0);
+    }
+    &__picture{
+        border-radius:0;
+    }
+        //Back Card
+        &__cta{
+            color: $color-gray-dark;
+            text-align: center;
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            transform: translate(0);
+            padding: 5rem 4rem 4rem 4rem;
+        }
+        &__price-value{
+            font-size: 2.8rem;
+            font-weight: 500;
+            padding: 5%;
+            letter-spacing: 3px;
+            &-1{
+             margin-bottom: 4rem;
+            color: $color-tertiary-dark;
+            }
+              &-2{
+             margin-bottom: 8rem;
+            color:$color-gray-dark ;
+            }
+              &-3{
+             margin-bottom: 8rem;
+            color: $color-secondary-light;
+            }
+        }
+         &__price-value{
+            font-size: 2.8rem;
+            font-weight: 500;
+            padding: 5%;
+            letter-spacing: 3px;
+             margin-bottom: 1rem;
+        }
+}
 }

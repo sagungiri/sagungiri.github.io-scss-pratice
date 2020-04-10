@@ -1,3 +1,18 @@
+/*media query
+0 - 600 px      Phone
+ 600 - 900 px    Tab(potrait)
+ 900 - 1200 px   Tab(landscape)
+ 1200 - 1800 px   Normal CSS aplies
+1800px above      Big screen
+
+
+breakpoint argument choices
+
+phone
+tab-port
+tab-land
+big-desktop
+*/
 @import url(https://fonts.googleapis.com/css?family=Merriweather);
 *,
 *::after,
@@ -8,9 +23,22 @@
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  padding: 2.5rem; }
+  @media (max-width: 56.25em) {
+    body {
+      padding: 0; } }
 
 @keyframes moveInLeft {
   0% {
@@ -44,8 +72,7 @@ body {
   font-family: 'Merriweather', sans-serif;
   font-weight: 400;
   /* font-size: 16px; */
-  line-height: 1.7;
-  padding: 2.5rem; }
+  line-height: 1.7; }
 
 .heading-primary {
   color: #bb6700;
@@ -61,6 +88,18 @@ body {
     animation-delay: 1s;
     animation-timing-function: linear;
     /* animation-iteration-count: 2; */ }
+    @media (max-width: 75em) {
+      .heading-primary--main {
+        font-size: 4rem;
+        letter-spacing: 1rem; } }
+    @media (max-width: 56.25em) {
+      .heading-primary--main {
+        font-size: 3.8rem;
+        letter-spacing: .5rem; } }
+    @media (max-width: 37.5em) {
+      .heading-primary--main {
+        letter-spacing: .15rem;
+        font-size: 3.4rem; } }
   .heading-primary--sub {
     display: block;
     font-size: 2.7rem;
@@ -68,6 +107,17 @@ body {
     letter-spacing: 1.88rem;
     animation: moveInRight 1s 1s linear;
     margin-bottom: 5%; }
+    @media (max-width: 75em) {
+      .heading-primary--sub {
+        letter-spacing: 1rem; } }
+    @media (max-width: 56.25em) {
+      .heading-primary--sub {
+        letter-spacing: .5rem;
+        font-size: 2.5rem; } }
+    @media (max-width: 37.5em) {
+      .heading-primary--sub {
+        letter-spacing: .2rem;
+        font-size: 2.3rem; } }
 
 .heading-secondary {
   font-size: 3.5rem;
@@ -79,6 +129,15 @@ body {
   color: transparent;
   letter-spacing: 3px;
   transition: all .2s; }
+  @media (max-width: 75em) {
+    .heading-secondary {
+      font-size: 3rem; } }
+  @media (max-width: 56.25em) {
+    .heading-secondary {
+      font-size: 2.8rem; } }
+  @media (max-width: 37.5em) {
+    .heading-secondary {
+      font-size: 2.5rem; } }
   .heading-secondary:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.05);
     text-shadow: 0.5rem 0.1rem 2rem rgba(0, 0, 0, 0.5); }
@@ -100,12 +159,18 @@ body {
 
 .u-margin-bottom-big {
   margin-bottom: 8rem !important; }
+  @media (max-width: 56.25em) {
+    .u-margin-bottom-big {
+      margin-bottom: 5rem !important; } }
 
 .u-margin-bottom-small {
   margin-bottom: 1.6rem !important; }
 
 .u-margin-bottom-medium {
   margin-bottom: 4rem !important; }
+  @media (max-width: 56.25em) {
+    .u-margin-bottom-medium {
+      margin-bottom: 2rem !important; } }
 
 .btn, .btn:link, .btn:visited {
   text-transform: uppercase;
@@ -193,15 +258,37 @@ body {
     transition: all .2s;
     z-index: 5;
     outline-offset: 1rem; }
+    @media (max-width: 56.25em) {
+      .composition__photo {
+        float: left;
+        position: relative;
+        width: 33.33%; } }
     .composition__photo--p1 {
-      left: 0;
+      left: 1rem;
       top: -2rem; }
+      @media (max-width: 56.25em) {
+        .composition__photo--p1 {
+          left: 2rem;
+          top: 1rem;
+          transform: scale(1.1);
+          z-index: 4; } }
     .composition__photo--p2 {
       right: 0;
       top: 2rem; }
+      @media (max-width: 56.25em) {
+        .composition__photo--p2 {
+          top: -1rem;
+          transform: scale(1.2);
+          z-index: 5; } }
     .composition__photo--p3 {
       left: 20%;
       top: 10rem; }
+      @media (max-width: 56.25em) {
+        .composition__photo--p3 {
+          top: 1rem;
+          left: -2rem;
+          transform: scale(1.1);
+          z-index: 4; } }
     .composition__photo:hover {
       outline: 0.35rem solid #009fb1;
       transform: scale(1.07) translateY(-0.5rem);
@@ -219,6 +306,10 @@ body {
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.8);
   transition: all .4s;
   height: 37rem; }
+  @media (max-width: 56.25em) {
+    .feature-box {
+      padding: 1.5rem 1rem;
+      height: 25rem; } }
   .feature-box__icon {
     font-size: 5rem;
     margin-bottom: .5rem;
@@ -332,6 +423,57 @@ body {
     .card__price-value-3 {
       margin-bottom: 8rem;
       color: #faa912; }
+  @media (max-width: 56.25em) {
+    .card {
+      height: auto;
+      border-radius: 3rem;
+      background-color: #ffff;
+      box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.4); }
+      .card__side {
+        height: auto;
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 0;
+        box-shadow: none; }
+        .card__side--back {
+          transform: rotateY(0);
+          clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%); }
+      .card__details {
+        padding: 1rem 3rem; }
+      .card:hover .card__side--front {
+        transform: rotateY(0); }
+      .card__picture {
+        border-radius: 0; }
+      .card__cta {
+        color: #332929;
+        text-align: center;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transform: translate(0);
+        padding: 5rem 4rem 4rem 4rem; }
+      .card__price-value {
+        font-size: 2.8rem;
+        font-weight: 500;
+        padding: 5%;
+        letter-spacing: 3px; }
+        .card__price-value-1 {
+          margin-bottom: 4rem;
+          color: #2b1aca; }
+        .card__price-value-2 {
+          margin-bottom: 8rem;
+          color: #332929; }
+        .card__price-value-3 {
+          margin-bottom: 8rem;
+          color: #faa912; }
+      .card__price-value {
+        font-size: 2.8rem;
+        font-weight: 500;
+        padding: 5%;
+        letter-spacing: 3px;
+        margin-bottom: 1rem; } }
 
 .story {
   width: 70%;
@@ -548,8 +690,12 @@ body {
   background-size: cover;
   position: relative;
   background-position: top;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%); }
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+  @media (max-width: 37.5em) {
+    .header {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%); } }
   .header__text-box {
     position: absolute;
     top: 30%;
@@ -562,42 +708,58 @@ body {
   margin: 0 auto;
   margin-bottom: 5rem;
   font-size: 1.25rem; }
-  .row:nth-child(1) {
-    margin-top: 2rem; }
+  .row:not(:last-child) {
+    margin-bottom: 6rem; }
+    @media (max-width: 56.25em) {
+      .row:not(:last-child) {
+        margin-bottom: 4rem; } }
   .row::after {
     content: '';
     display: table;
     clear: both; }
+  @media (max-width: 56.25em) {
+    .row {
+      max-width: 60rem;
+      padding: 0 2rem; } }
 
 /*class^ select all the class start with 'col-', class* select all the class that contains col-, class$ select all the class that ends with col- */
 [class^='col-'] {
-  float: left;
-  margin-right: 6rem; }
+  float: left; }
+  [class^='col-']:not(:last-child) {
+    margin-right: 5rem; }
+    @media (max-width: 56.25em) {
+      [class^='col-']:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 4rem; } }
+  @media (max-width: 56.25em) {
+    [class^='col-'] {
+      width: 100% !important; } }
 
 .col-1-of-2 {
   width: calc((100% - 6rem)/2); }
-  .col-1-of-2:nth-child(2) {
-    margin-right: 0; }
 
 .col-1-of-3 {
   width: calc((100% - 120px)/3); }
-  .col-1-of-3:nth-child(3) {
-    margin-right: 0; }
 
 .col-1-of-4 {
   width: calc((100% - 180px)/4); }
-  .col-1-of-4:nth-child(4) {
-    margin-right: 0; }
 
 .footer {
   background-color: #b8b5b3;
   padding: 4rem 0;
   font-weight: 600;
   color: #332929; }
+  @media (max-width: 56.25em) {
+    .footer {
+      padding: 3rem 0s; } }
   .footer__navigation {
     border-top: 0.15rem solid #332929;
     padding-top: 4rem;
     display: inline-block; }
+    @media (max-width: 56.25em) {
+      .footer__navigation {
+        width: 100%;
+        text-align: center; } }
   .footer__list {
     list-style: none;
     font-size: 1.4rem; }
@@ -622,6 +784,10 @@ body {
     padding-top: 4rem;
     width: 90%;
     float: right; }
+    @media (max-width: 56.25em) {
+      .footer__copyright {
+        width: 100%;
+        float: none; } }
 
 .navigation__checkbox {
   display: none; }
@@ -638,6 +804,14 @@ body {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.4);
   cursor: pointer;
   text-align: center; }
+  @media (max-width: 56.25em) {
+    .navigation__button {
+      top: 4rem;
+      right: 4rem; } }
+  @media (max-width: 37.5em) {
+    .navigation__button {
+      top: 3em;
+      right: 3rem; } }
 
 .navigation__background {
   width: 5rem;
@@ -649,6 +823,14 @@ body {
   background-image: radial-gradient(#faa912, #009fb1);
   z-index: 200;
   transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1); }
+  @media (max-width: 56.25em) {
+    .navigation__background {
+      top: 4.25rem;
+      right: 4.25rem; } }
+  @media (max-width: 37.5em) {
+    .navigation__background {
+      top: 3.25rem;
+      right: 3.25rem; } }
 
 .navigation__nav {
   height: 100vh;
@@ -732,7 +914,7 @@ body {
 .section-about {
   background-color: #e4e4e4;
   padding: 15rem 0;
-  margin-top: -10vh; }
+  margin-top: -15vh; }
 
 .section-features {
   margin-top: -5.75rem;
@@ -742,20 +924,32 @@ body {
   transform: skewY(-5deg); }
   .section-features > * {
     transform: skewY(5deg); }
+  @media (max-width: 56.25em) {
+    .section-features {
+      padding: 7rem 0; } }
 
 .section-tours {
   background-color: #e4e4e4;
   padding: 20rem 0 5rem 0;
   margin-top: -8rem; }
+  @media (max-width: 56.25em) {
+    .section-tours {
+      padding: 15rem 0 5rem 0; } }
 
 .section-stories {
   position: relative;
   padding: 10rem 0;
   text-align: center; }
+  @media (max-width: 56.25em) {
+    .section-stories {
+      padding: 5rem 0; } }
 
 .section-book {
   padding: 10rem 0;
   background-image: linear-gradient(to left bottom, #faa912, #016888); }
+  @media (max-width: 56.25em) {
+    .section-book {
+      padding: 5rem 0; } }
 
 .book {
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.75) 53%, transparent 47%), url(../../images/kyle-cesmat-wkJwedwCpc0-unsplash.jpg);
