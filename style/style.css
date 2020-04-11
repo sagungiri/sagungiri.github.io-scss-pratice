@@ -487,6 +487,14 @@ body {
   color: #332929;
   transform: skewX(-10deg);
   cursor: pointer; }
+  @media (max-width: 56.25em) {
+    .story {
+      width: 100%;
+      padding: 5rem;
+      padding-left: 7rem; } }
+  @media (max-width: 37.5em) {
+    .story {
+      transform: skewX(0); } }
   .story__shape {
     width: 18rem;
     height: 18rem;
@@ -497,12 +505,18 @@ body {
     -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
     transform: translatex(-3rem) translateY(-0.9rem) skewX(12deg); }
+    @media (max-width: 37.5em) {
+      .story__shape {
+        transform: skewX(0); } }
   .story__img {
     height: 100%;
     transform: translateX(-4rem);
     transition: all .4s; }
   .story__text {
-    transform: skewX(12deg); }
+    transform: translatex(-3rem) translateY(-0.9rem) skewX(12deg); }
+    @media (max-width: 37.5em) {
+      .story__text {
+        transform: skewX(0); } }
   .story__caption {
     position: absolute;
     top: 40%;
@@ -553,6 +567,9 @@ body {
   width: 80%;
   display: block;
   transition: all .2s; }
+  @media (max-width: 56.25em) {
+    .form__input {
+      width: 100%; } }
   .form__input:focus {
     outline: none;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.6);
@@ -578,6 +595,10 @@ body {
 .form__radio-group {
   width: 49%;
   display: inline-block; }
+  @media (max-width: 56.25em) {
+    .form__radio-group {
+      width: 100%;
+      margin-bottom: 1.5rem; } }
 
 .form__radio-label {
   font-size: 1.6rem;
@@ -954,9 +975,21 @@ body {
 .book {
   background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.75) 53%, transparent 47%), url(../../images/kyle-cesmat-wkJwedwCpc0-unsplash.jpg);
   background-size: 100%;
-  height: 50rem;
   border-radius: .5rem;
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.6); }
+  @media (max-width: 75em) {
+    .book {
+      background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.75) 60%, transparent 60%), url(../../images/kyle-cesmat-wkJwedwCpc0-unsplash.jpg);
+      background-size: cover; } }
+  @media (max-width: 56.25em) {
+    .book {
+      background-image: linear-gradient(rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.75) 100%), url(../../images/kyle-cesmat-wkJwedwCpc0-unsplash.jpg); } }
   .book__form {
     max-width: 50%;
     padding: 6rem; }
+    @media (max-width: 75em) {
+      .book__form {
+        max-width: 60%; } }
+    @media (max-width: 56.25em) {
+      .book__form {
+        max-width: 100%; } }
